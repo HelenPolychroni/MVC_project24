@@ -1,0 +1,30 @@
+﻿/* Center the login form on the page */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 55vh;  /*Adjust as needed */
+}
+
+/* Style for form container (optional) */
+.form-container {
+    width: 300px; /* Adjust as needed */
+}
+
+/* Style for input fields */
+.form-group {
+    margin-bottom: 15px;
+}
+
+/* Make the input fields a bit smaller */
+.form-control {
+    width: 100%; /* Adjust as needed */
+    padding: 8px; /* Adjust as needed */
+    box-sizing: border-box;
+}
+
+/* Style for the submit button */
+.btn-primary {
+    width: 5%; /* Adjust as needed */
+}

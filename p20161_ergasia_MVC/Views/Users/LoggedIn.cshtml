@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewData["Title"] = "LoggedIn";
+}
+
+<h1>Logged In</h1>
+
+<h2>Welcome, you are now logged in!</h2>
+<p>@ViewBag.Error</p>
+
+<form method="post" action="/User/Login">
+    <label for="username">Username:</label>
+    <input type="text" name="username" required /><br />
+
+    <label for="password">Password:</label>
+    <input type="password" name="password" required /><br />
+
+    <button type="submit">Login</button>
+</form>
+

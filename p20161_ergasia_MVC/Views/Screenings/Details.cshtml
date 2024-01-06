@@ -1,0 +1,44 @@
+﻿@model p20161_ergasia_MVC.Models.Screening
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Screening</h4>
+    <hr />
+    <dl class="row">
+        
+        <dt class="col-sm-2">
+           Movie
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.MoviesNameNavigation.Name)
+        </dd>
+        <dt class="col-sm-2">
+            Cinema Room
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CinemasNameNavigation.Name)
+        </dd>
+        @*<dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ContentAdminsUsernameNavigation)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ContentAdminsUsernameNavigation.Username)
+        </dd>*@
+        
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Time)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Time)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

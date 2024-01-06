@@ -1,0 +1,62 @@
+﻿@model IEnumerable<p20161_ergasia_MVC.Models.Screening>
+
+@{
+    ViewData["Title"] = "ViewAccordingToDate";
+}
+<h1>View Screenings According To Date</h1>
+
+&nbsp;
+<form asp-controller="Screenings" asp-action="ViewAccordingToDate" method="get">
+
+    <div class="form-group">
+ 
+
+    <label for="startDate">Start Date:</label>
+    <input type="date" id="startDate" name="startDate">
+
+    <label for="endDate">End Date:</label>
+    <input type="date" id="endDate" name="endDate">
+
+        <button type="submit">Apply Filter</button>
+    </div>
+</form>
+&nbsp;
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.MoviesNameNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CinemasNameNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Time)
+            </th>
+            @*<th>
+            @Html.DisplayNameFor(model => model.ContentAdminsUsernameNavigation)
+            </th>*@
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MoviesNameNavigation.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CinemasNameNavigation.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Time)
+                </td>
+                @*<td>
+            @Html.DisplayFor(modelItem => item.ContentAdminsUsernameNavigation.Username)
+            </td>*@
+            </tr>
+        }
+
+    
