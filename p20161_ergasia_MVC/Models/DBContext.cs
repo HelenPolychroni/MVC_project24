@@ -52,6 +52,17 @@ public partial class DBContext : DbContext
             entity.HasOne(d => d.ContentAdminsUsernameNavigation).WithMany(p => p.Movies).HasConstraintName("FK__MOVIES__CONTENT___ADMINS");
         });
 
+        modelBuilder.Entity<Reservation>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PK__RESERVAT__3214EC2707F82F7D");
+
+            entity.HasOne(d => d.CustomersUsernameNavigation).WithMany(p => p.Reservations).HasConstraintName("FK__RESERVATI__CUSTO__43D61337");
+
+            entity.HasOne(d => d.ScreeningsCinemasNameNavigation).WithMany(p => p.Reservations).HasConstraintName("FK__RESERVATI__SCREE__42E1EEFE");
+
+            entity.HasOne(d => d.ScreeningsMoviesNameNavigation).WithMany(p => p.Reservations).HasConstraintName("FK__RESERVATI__SCREE__41EDCAC5");
+        });
+
         modelBuilder.Entity<Screening>(entity =>
         {
             entity.HasKey(e => e.Id).HasName("PK__SCREENIN__3214EC2737B59509");

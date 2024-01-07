@@ -1,0 +1,53 @@
+﻿@model IEnumerable<p20161_ergasia_MVC.Models.Reservation>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NumberOfSeats)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomersUsernameNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ScreeningsCinemasNameNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ScreeningsMoviesNameNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumberOfSeats)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomersUsernameNavigation.Username)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ScreeningsCinemasNameNavigation.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ScreeningsMoviesNameNavigation.Name)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

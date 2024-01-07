@@ -42,6 +42,9 @@ public partial class Movie
     [InverseProperty("Movies")]
     public virtual ContentAdmin? ContentAdminsUsernameNavigation { get; set; }
 
+    [InverseProperty("ScreeningsMoviesNameNavigation")]
+    public virtual ICollection<Reservation> Reservations { get; set; } = new List<Reservation>();
+
     [InverseProperty("MoviesNameNavigation")]
     public virtual ICollection<Screening> Screenings { get; set; } = new List<Screening>();
 }

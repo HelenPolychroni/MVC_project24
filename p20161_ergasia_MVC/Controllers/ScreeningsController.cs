@@ -25,7 +25,13 @@ namespace p20161_ergasia_MVC.Controllers
             return View(await dBContext.ToListAsync());
         }
 
-      
+        public async Task<IActionResult> View4Reservations()
+        {
+            var dBContext = _context.Screenings.Include(s => s.CinemasNameNavigation).Include(s => s.ContentAdminsUsernameNavigation).Include(s => s.MoviesNameNavigation);
+            return View(await dBContext.ToListAsync());
+        }
+
+
 
         public IActionResult ViewAccordingToDate(DateTime? startDate, DateTime? endDate)
         {
@@ -99,6 +105,22 @@ namespace p20161_ergasia_MVC.Controllers
             return View(screening);
         }
 
+        public async Task<IActionResult> BuyTickets(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var screening = await _context.Screenings.FindAsync(id);
+            if (screening == null)
+            {
+                return NotFound();
+            }
+
+            return RedirectToAction("BuyTickets", "Reservations", new { screening});
+        }
+
         // GET: Screenings/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
@@ -117,6 +139,7 @@ namespace p20161_ergasia_MVC.Controllers
             ViewData["MoviesName"] = new SelectList(_context.Movies, "Name", "Name", screening.MoviesName);
             return View(screening);
         }
+
 
         // POST: Screenings/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.

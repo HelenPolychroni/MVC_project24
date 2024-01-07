@@ -1,0 +1,61 @@
+﻿@model IEnumerable<p20161_ergasia_MVC.Models.Screening>
+@{
+    ViewData["Title"] = "View4Reservations";
+}
+
+<h1>View Reservations</h1>
+
+<p>
+    <a asp-action="Create">Match movie to cinema room and time</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Movie
+            </th>
+            <th>
+                Cinema Room
+            </th>
+            <th>
+                3D
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Time)
+            </th>
+            @*<th>
+            @Html.DisplayNameFor(model => model.ContentAdminsUsernameNavigation)
+            </th>*@
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MoviesNameNavigation.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CinemasNameNavigation.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CinemasNameNavigation.Is3D)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Time)
+                </td>
+                @*<td>
+            @Html.DisplayFor(modelItem => item.ContentAdminsUsernameNavigation.Username)
+            </td>*@
+
+                <td>
+                    <a asp-action="BuyTickets" asp-route-id="@item.Id">Buy Tickets</a> 
+                    @*<a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>*@
+                </td>
+            </tr>
+        }
+</tbody>
+</table>
