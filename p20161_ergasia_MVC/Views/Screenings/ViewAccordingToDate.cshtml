@@ -25,11 +25,15 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.MoviesNameNavigation)
+               Movie
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.CinemasNameNavigation)
+                Cinema Room
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MoviesNameNavigation.Length)
+            </th>
+
             <th>
                 @Html.DisplayNameFor(model => model.Time)
             </th>
@@ -50,6 +54,9 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.CinemasNameNavigation.Name)
                 </td>
+                <th>
+                    @Html.DisplayNameFor(model => model.MoviesNameNavigation.Length)
+                </th>
                 <td>
                     @Html.DisplayFor(modelItem => item.Time)
                 </td>
