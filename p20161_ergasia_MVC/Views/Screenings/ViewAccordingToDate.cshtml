@@ -33,6 +33,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.MoviesNameNavigation.Length)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MoviesNameNavigation.Type)
+            </th>
 
             <th>
                 @Html.DisplayNameFor(model => model.Time)
@@ -55,7 +58,7 @@
                     @Html.DisplayFor(modelItem => item.CinemasNameNavigation.Name)
                 </td>
                 <th>
-                    @Html.DisplayNameFor(model => model.MoviesNameNavigation.Length)
+                    @Html.DisplayNameFor(modelItem => item.MoviesNameNavigation.Length)
                 </th>
                 <td>
                     @Html.DisplayFor(modelItem => item.Time)
