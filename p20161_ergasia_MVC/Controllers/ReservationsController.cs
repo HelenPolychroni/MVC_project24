@@ -49,7 +49,7 @@ namespace p20161_ergasia_MVC.Controllers
         }
 
         // GET: Reservations/Create
-        public IActionResult Create()
+        /*public IActionResult Create()
         {
             ViewData["CustomersUsername"] = new SelectList(_context.Customers, "Username", "Username");
             ViewData["ScreeningsCinemasName"] = new SelectList(_context.Cinemas, "Name", "Name");
@@ -75,7 +75,7 @@ namespace p20161_ergasia_MVC.Controllers
             ViewData["ScreeningsCinemasName"] = new SelectList(_context.Cinemas, "Name", "Name", reservation.ScreeningsCinemasName);
             ViewData["ScreeningsMoviesName"] = new SelectList(_context.Movies, "Name", "Name", reservation.ScreeningsMoviesName);
             return View(reservation);
-        }
+        }*/
 
         // GET: Reservations/Edit/5
         public async Task<IActionResult> Edit(int? id)
@@ -175,11 +175,21 @@ namespace p20161_ergasia_MVC.Controllers
             return _context.Reservations.Any(e => e.Id == id);
         }
 
-        public async Task<IActionResult> BuyTickets(Screening screening)
+        public async Task<IActionResult> Create(Screening screening)
         {
+            //movie = "hello";
 
-            return View(screening);
+            ViewBag.Movie = screening.MoviesName;
+            ViewBag.Cinema = screening.CinemasName;
+            ViewBag.DateTime = screening.Time;
 
+            // Return the view
+            return View();
         }
+
+        
+
+
+
     }
 }

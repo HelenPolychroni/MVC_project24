@@ -14,47 +14,55 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
 
-            <div class="form-group">
+            @*<div class="form-group">
                 <label class="control-label">Choose date</label>
                 <input type = "date" class="form-control" id="selectedDate" />
                
-                  </div>
+                  </div>*@
 
-                  &nbsp;
-            <div class="form-group">
+            &nbsp;
+          
+            <p>Movie: @ViewBag.Movie</p>
+            <p>Cinema: @ViewBag.Cinema</p>
+            <p>Date and Time: @ViewBag.DateTime</p>
+
+            @*<div class="form-group">
                 <label class="control-label">Movie</label>
-                <select asp-for="ScreeningsMoviesName" class ="form-control" asp-items="ViewBag.ScreeningsMoviesName"></select>
+                <select>@ViewBag.Movie</select>
+            </div>
+            
+            <div class="form-group">
+                <label class="control-label">Cinema</label>
+                <select asp-for="CinemasName" class="form-control" asp-items="ViewBag.CinemasName"></select>
             </div>
             <div class="form-group">
-                <label  class="control-label">Cinema Room</label>
-                <select asp-for="ScreeningsCinemasName" class ="form-control" asp-items="ViewBag.ScreeningsCinemasName"></select>
-            </div>
-            <div class="form-group">
-                <label class="control-label">Available Dates</label>
-                <select  class="form-control" asp-items="ViewBag.Dates"></select>
-            </div>
+                <label asp-for="Time" class="control-label"></label>
+                <input asp-for="Time" class="form-control" />
+                <span asp-validation-for="Time" class="text-danger"></span>
+            </div>*@
             @*<div class="form-group">
                 <label asp-for="CustomersUsername" class="control-label"></label>
                 <select asp-for="CustomersUsername" class ="form-control" asp-items="ViewBag.CustomersUsername"></select>
-            </div>*@
+            </div>
             <div class="form-group">
                 <label  class="control-label">Available seats</label>
                 <input asp-for="NumberOfSeats" class="form-control" />
                 <span asp-validation-for="NumberOfSeats" class="text-danger"></span>
-            </div>
+            </div>*@
+
+            <p>Available seats: 97</p>
             <div class="form-group">
-                <label asp-for="NumberOfSeats" class="control-label"></label>
+                <label class="control-label">Number of seats</label>
                 <input asp-for="NumberOfSeats" class="form-control" />
                 <span asp-validation-for="NumberOfSeats" class="text-danger"></span>
             </div>
+            &nbsp;
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Create reservation" class="btn btn-primary" /> |
+                <a asp-action="Index">Back to List</a>
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
 

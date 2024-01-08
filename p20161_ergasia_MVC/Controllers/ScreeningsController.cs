@@ -25,7 +25,7 @@ namespace p20161_ergasia_MVC.Controllers
             return View(await dBContext.ToListAsync());
         }
 
-        public async Task<IActionResult> View4Reservations()
+        public async Task<IActionResult> BuyTickets()
         {
             var dBContext = _context.Screenings.Include(s => s.CinemasNameNavigation).Include(s => s.ContentAdminsUsernameNavigation).Include(s => s.MoviesNameNavigation);
             return View(await dBContext.ToListAsync());
@@ -105,7 +105,9 @@ namespace p20161_ergasia_MVC.Controllers
             return View(screening);
         }
 
-        public async Task<IActionResult> BuyTickets(int? id)
+
+        
+        public async Task<IActionResult> BuyTickets1(int? id)
         {
             if (id == null)
             {
@@ -118,7 +120,7 @@ namespace p20161_ergasia_MVC.Controllers
                 return NotFound();
             }
 
-            return RedirectToAction("BuyTickets", "Reservations", new { screening});
+            return RedirectToAction("Create", "Reservations", new { screening});
         }
 
         // GET: Screenings/Edit/5
