@@ -7,7 +7,7 @@
 <h1>Reservation history</h1>
 
 <p>
-    <a asp-action="Create">Make a reservatioon</a>
+    <a asp-action="ReserveTickets" asp-controller="Screenings">Make a reservation</a>
 </p>
 <table class="table">
     <thead>
@@ -22,6 +22,9 @@
                 Number of seats
             </th>
             <th>
+                Datetime
+            </th>
+            <th hidden>
                 @Html.DisplayNameFor(model => model.CustomersUsernameNavigation)
             </th>
             
@@ -41,9 +44,17 @@
                 <td>
                 @Html.DisplayFor(modelItem => item.NumberOfSeats)
             </td>
-            <td>
+                <td>
+                   15/01/2024 16:45
+                </td>
+            <td hidden>
                 @Html.DisplayFor(modelItem => item.CustomersUsernameNavigation.Username)
             </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
            
         </tr>
 }

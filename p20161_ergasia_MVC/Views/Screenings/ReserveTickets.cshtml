@@ -1,6 +1,6 @@
 ﻿@model IEnumerable<p20161_ergasia_MVC.Models.Screening>
 @{
-    ViewData["Title"] = "BuyTickets";
+    ViewData["Title"] = "ReserveTickets";
 }
 
 <h1>View screenings schedule and reserve tickets</h1>
@@ -48,7 +48,7 @@
             </td>*@
 
                 <td>
-                    <a asp-controller="Screenings" asp-action="BuyTickets1" asp-route-id="@item.Id">Reserve Tickets</a>
+                    <a asp-action="ReserveTickets1" asp-controller="Screenings" asp-route-id="@item.Id">Reserve Tickets</a>
                 </td>
             </tr>
         }

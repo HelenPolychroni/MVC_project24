@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "p20161_ergasia_MVC", "p20161_ergasia_MVC\p20161_ergasia_MVC.csproj", "{8F408E5B-4893-4CA1-866F-4FCE3F96826F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "p20161_ergasia_MVC", "p20161_ergasia_MVC\p20161_ergasia_MVC.csproj", "{8F408E5B-4893-4CA1-866F-4FCE3F96826F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

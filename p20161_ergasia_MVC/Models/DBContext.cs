@@ -54,13 +54,13 @@ public partial class DBContext : DbContext
 
         modelBuilder.Entity<Reservation>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__RESERVAT__3214EC2707F82F7D");
+            entity.HasKey(e => e.Id).HasName("PK__RESERVAT__3214EC272775CA84");
 
-            entity.HasOne(d => d.CustomersUsernameNavigation).WithMany(p => p.Reservations).HasConstraintName("FK__RESERVATI__CUSTO__43D61337");
+            entity.HasOne(d => d.CustomersUsernameNavigation).WithMany(p => p.Reservations).HasConstraintName("FK__RESERVATI__CUSTO__51300E55");
 
-            entity.HasOne(d => d.ScreeningsCinemasNameNavigation).WithMany(p => p.Reservations).HasConstraintName("FK__RESERVATI__SCREE__42E1EEFE");
+            entity.HasOne(d => d.ScreeningsCinemasNameNavigation).WithMany(p => p.Reservations).HasConstraintName("FK__RESERVATI__SCREE__503BEA1C");
 
-            entity.HasOne(d => d.ScreeningsMoviesNameNavigation).WithMany(p => p.Reservations).HasConstraintName("FK__RESERVATI__SCREE__41EDCAC5");
+            entity.HasOne(d => d.ScreeningsMoviesNameNavigation).WithMany(p => p.Reservations).HasConstraintName("FK__RESERVATI__SCREE__4F47C5E3");
         });
 
         modelBuilder.Entity<Screening>(entity =>
