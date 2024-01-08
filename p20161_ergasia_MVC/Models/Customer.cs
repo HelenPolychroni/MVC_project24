@@ -29,4 +29,7 @@ public partial class Customer
     [StringLength(45)]
     [Unicode(false)]
     public string Password { get; set; } = null!;
+
+    [InverseProperty("CustomersUsernameNavigation")]
+    public virtual ICollection<Reservation> Reservations { get; set; } = new List<Reservation>();
 }

@@ -20,6 +20,9 @@ public partial class Cinema
     [Unicode(false)]
     public string? Is3D { get; set; }
 
+    [InverseProperty("ScreeningsCinemasNameNavigation")]
+    public virtual ICollection<Reservation> Reservations { get; set; } = new List<Reservation>();
+
     [InverseProperty("CinemasNameNavigation")]
     public virtual ICollection<Screening> Screenings { get; set; } = new List<Screening>();
 }

@@ -1,0 +1,57 @@
+﻿@model IEnumerable<p20161_ergasia_MVC.Models.Screening>
+@{
+    ViewData["Title"] = "ReserveTickets";
+}
+
+<h1>View screenings schedule and reserve tickets</h1>
+&nbsp;
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Movie
+            </th>
+            <th>
+                Cinema Room
+            </th>
+            <th>
+                3D
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Time)
+            </th>
+            @*<th>
+            @Html.DisplayNameFor(model => model.ContentAdminsUsernameNavigation)
+            </th>*@
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MoviesNameNavigation.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CinemasNameNavigation.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CinemasNameNavigation.Is3D)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Time)
+                </td>
+                @*<td>
+            @Html.DisplayFor(modelItem => item.ContentAdminsUsernameNavigation.Username)
+            </td>*@
+
+                <td>
+                    <a asp-action="ReserveTickets1" asp-controller="Screenings" asp-route-id="@item.Id">Reserve Tickets</a>
+                </td>
+            </tr>
+        }
+</tbody>
+</table>
+

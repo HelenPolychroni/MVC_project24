@@ -19,6 +19,9 @@
                 Cinema Room
             </th>
             <th>
+                3D
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Time)
             </th>
             @*<th>
@@ -37,6 +40,9 @@
             <td>
                 @Html.DisplayFor(modelItem => item.CinemasNameNavigation.Name)
             </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CinemasNameNavigation.Is3D)
+                </td>
                 <td>
                 @Html.DisplayFor(modelItem => item.Time)
                 </td>

@@ -25,10 +25,23 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.MoviesNameNavigation)
+               Movie
+            </th>
+           
+            <th>
+                @Html.DisplayNameFor(model => model.MoviesNameNavigation.Length)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.CinemasNameNavigation)
+                @Html.DisplayNameFor(model => model.MoviesNameNavigation.Type)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MoviesNameNavigation.Summary)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MoviesNameNavigation.Director)
+            </th>
+            <th>
+                Cinema Room
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Time)
@@ -47,6 +60,20 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.MoviesNameNavigation.Name)
                 </td>
+               
+                <td>
+                    @Html.DisplayFor(modelItem => item.MoviesNameNavigation.Length)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MoviesNameNavigation.Type)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MoviesNameNavigation.Summary)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MoviesNameNavigation.Director)
+                </td>
+
                 <td>
                     @Html.DisplayFor(modelItem => item.CinemasNameNavigation.Name)
                 </td>
